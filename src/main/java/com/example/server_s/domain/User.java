@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.apache.tomcat.jni.Time;
 
 import javax.persistence.*;
 import java.util.List;
@@ -26,7 +25,6 @@ public class User {
     private String password;
     @Column(name = "email")
     private String email;
-
-//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
-//    private List<Place> places;
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.ALL)
+//    private List<Place> place;
 }

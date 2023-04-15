@@ -1,8 +1,6 @@
 package com.example.server_s.controller;
 
 import com.example.server_s.domain.Place;
-import com.example.server_s.repository.PlaceRepository;
-import com.example.server_s.service.PlaceService;
 import com.example.server_s.service.impl.PlaceServiceimpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -11,7 +9,7 @@ import java.util.List;
 
 @RestController
 public class PlaceController {
-    private final PlaceService service;
+    private final PlaceServiceimpl service;
 
     @Autowired
     public PlaceController(PlaceServiceimpl service) {
@@ -26,7 +24,7 @@ public class PlaceController {
         return service.getAll();
     }
 
-    @GetMapping("/place{id}")
+    @GetMapping("/place/{id}")
     public Place getById(@PathVariable long id){return service.getById(id);}
 
     @PutMapping("/place")

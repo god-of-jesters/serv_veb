@@ -31,4 +31,7 @@ public class Place {
     private long time;
     @Column(name = "userId")
     private long userId;
+//    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY) // Аналогично с полями книги
+//    @JoinColumn(name = "user")
+//    private User tUser;
 }
