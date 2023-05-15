@@ -1,6 +1,5 @@
 package com.example.server_s;
 
-import com.example.server_s.domain.User;
 import org.h2.tools.Console;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,6 +15,5 @@ public class App {
         }catch (SQLException e){
             e.printStackTrace();
         }
-
     }
 }

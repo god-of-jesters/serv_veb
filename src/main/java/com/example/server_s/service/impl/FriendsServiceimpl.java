@@ -1,6 +1,6 @@
 package com.example.server_s.service.impl;
 
-import com.example.server_s.domain.Friends;
+import com.example.server_s.domain.Friend;
 import com.example.server_s.repository.FriendsRepository;
 import com.example.server_s.service.FriendsService;
 import org.springframework.stereotype.Service;
@@ -16,22 +16,22 @@ public class FriendsServiceimpl implements FriendsService {
     }
 
     @Override
-    public Friends add(Friends friend) {
+    public Friend add(Friend friend) {
         return repository.save(friend);
     }
 
     @Override
-    public List<Friends> getAll() {
+    public List<Friend> getAll() {
         return repository.findAll();
     }
 
     @Override
-    public Friends getById(long id) {
+    public Friend getById(long id) {
         return repository.findById(id).get();
     }
 
     @Override
-    public Friends update(Friends friend) {
+    public Friend update(Friend friend) {
         return repository.save(friend);
     }
 

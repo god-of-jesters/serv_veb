@@ -1,7 +1,6 @@
 package com.example.server_s.controller;
 
-import com.example.server_s.domain.Friends;
-import com.example.server_s.domain.Place;
+import com.example.server_s.domain.Friend;
 import com.example.server_s.service.impl.FriendsServiceimpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -18,19 +17,19 @@ public class FriendsController {
     }
 
     @PostMapping("/friends")
-    public Friends add(@RequestBody Friends friends) {return service.add(friends);}
+    public Friend add(@RequestBody Friend friend) {return service.add(friend);}
 
     @GetMapping("/friends")
-    public List<Friends> getAll(){
+    public List<Friend> getAll(){
         return service.getAll();
     }
 
     @GetMapping("/friends/{id}")
-    public Friends getById(@PathVariable long id){return service.getById(id);}
+    public Friend getById(@PathVariable long id){return service.getById(id);}
 
     @PutMapping("/friends")
-    public Friends update(Friends friends){
-        return service.update(friends);
+    public Friend update(Friend friend){
+        return service.update(friend);
     }
 
     @DeleteMapping("/friends/{id}")

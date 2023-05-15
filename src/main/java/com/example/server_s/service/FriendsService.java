@@ -1,18 +1,18 @@
 package com.example.server_s.service;
 
-import com.example.server_s.domain.Friends;
+import com.example.server_s.domain.Friend;
 
 import java.util.List;
 
 public interface FriendsService {
-    Friends add(Friends friend);
+    Friend add(Friend friend);
 
-    List<Friends> getAll();
+    List<Friend> getAll();
 
-    Friends getById(long id);
+    Friend getById(long id);
 
 
-    Friends update(Friends friend);
+    Friend update(Friend friend);
 
     void deleteById(long id);
 }

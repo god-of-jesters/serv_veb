@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 @Data
 @Builder
@@ -23,8 +24,13 @@ public class User {
     private String name;
     @Column(name = "password")
     private String password;
-    @Column(name = "email")
-    private String email;
-//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.ALL)
-//    private List<Place> place;
+    @Column(name = "score")
+    private String score;
+
+    @ManyToMany
+    @JoinTable(
+            name = "Relationship",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "friend_id"))
+    Set<Friend> friends;
 }
