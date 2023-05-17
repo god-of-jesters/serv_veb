@@ -22,6 +22,6 @@ public class Friend{
     private String name;
     @Column(name = "score")
     private int score;
-    @ManyToMany(mappedBy = "Relationship")
+    @ManyToMany(mappedBy = "friends")
     Set<User> users;
 }
