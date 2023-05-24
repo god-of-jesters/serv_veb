@@ -26,11 +26,4 @@ public class User {
     private String password;
     @Column(name = "score")
     private String score;
-
-    @ManyToMany
-    @JoinTable(
-            name = "Relationship",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "friend_id"))
-    Set<Friend> friends;
 }
